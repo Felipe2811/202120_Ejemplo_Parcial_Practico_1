@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "5389b411-b92c-42fd-b817-4027067518d7",
+		"name": "Medico Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Obtener todos los médicos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(responseBody);\r",
+							"var data = JSON.parse(responseBody);\r",
+							"tests[\"No genera error en el get\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://{{ip}}:{{puerto}}/api/medicos"
+			},
+			"response": [
+				{
+					"name": "Obtener todos los médicos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://{{ip}}:{{puerto}}/api/medicos"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Sep 2021 05:01:18 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"nombre\": \"Kevin\",\n        \"apellido\": \"Gomez\",\n        \"registroMedico\": \"anything\",\n        \"especialidad\": \"Cirujano\"\n    },\n    {\n        \"id\": 2,\n        \"nombre\": \"Selena\",\n        \"apellido\": \"Arias\",\n        \"registroMedico\": \"anything\",\n        \"especialidad\": \"Pediatra\"\n    },\n    {\n        \"id\": 3,\n        \"nombre\": \"Maria\",\n        \"apellido\": \"Serna\",\n        \"registroMedico\": \"anything\",\n        \"especialidad\": \"Pediatra\"\n    },\n    {\n        \"id\": 4,\n        \"nombre\": \"Camila\",\n        \"apellido\": \"Arias\",\n        \"registroMedico\": \"anything\",\n        \"especialidad\": \"Cirujano\"\n    }\n]"
+				}
+			]
+		}
+	]
+}
